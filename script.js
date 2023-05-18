@@ -1,3 +1,6 @@
+greetUser();
+playGame();
+//This function prompts for the player choice and adds that choice to a variable
 function getPlayerChoice() {
     let isNotValid = true;
     let userChoice = null;
@@ -22,6 +25,56 @@ function getPlayerChoice() {
         } while (isNotValid);
 }
 
-// let playerChoice = getPlayerChoice();
+function getComputerChoice() {
+        let compOptions = ["rock", "paper", "scissors"];
+        let compChoice = compOptions[Math.floor(Math.random() * compOptions.length)];
+        return compChoice;
+}
 
-// console.log(playerChoice);
+function playGame() {
+    let playerWins = 0;
+    let computerWins = 0;
+
+    while (playerWins < 5 && computerWins < 5) {
+        playRound();
+        
+    }
+    
+    if (playerWins > computerWins) {
+        alert(`You Won the Game! The score was: You: ${playerWins} | Computer: ${computerWins}`);
+    } else if (playerWins < computerWins) {
+        alert(`You Lost the Game! The score was: You: ${playerWins} | Computer:${computerWins}`);
+    } else {
+        alert(`You Tied the Game! The score was: You: ${playerWins} | Computer:${computerWins}`);
+    }
+    
+    function playRound() {
+        let playerSelection = getPlayerChoice();
+        let computerSelection = getComputerChoice();
+        
+    
+        if (playerSelection === 'rock' && computerSelection === 'scissors') {
+            alert("You Win!");
+            playerWins++;
+        } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+            alert("You Win!");
+            playerWins++;
+        } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+            alert('You Win!');
+            playerWins++;
+        } else if (playerSelection === computerSelection) {
+            alert('Its a Tie!');
+        } else {
+            alert('You Lose!');
+            computerWins++;
+        }
+
+        console.log(`You: ${playerSelection}`, " | ", `Computer: ${computerSelection}`);
+        console.log(`The score is: You: ${playerWins} | Computer: ${computerWins}`);
+    }
+}
+
+function greetUser() {
+
+    alert("Hi. Welcome to Rock Paper Scissors. The first one to 5 wins the game. Click OK when you're ready to begin");
+}
