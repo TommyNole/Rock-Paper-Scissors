@@ -48,11 +48,11 @@ function checkResult(playerChoice, cpuChoice) {
 
 function checkForWin() {
     if (playerWins === 5) {
-        statusText.textContent = 'You win the game!';
+        statusText.textContent = 'You won the game!';
         endOfGamePanel.style.display = 'block';
         controlsPanel.style.display = 'none';
     } else if (computerWins === 5) { 
-        statusText.textContent = 'You lose the game!';
+        statusText.textContent = 'You lost the game!';
         endOfGamePanel.style.display = 'block';
         controlsPanel.style.display = 'none';
     }
