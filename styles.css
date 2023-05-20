@@ -103,6 +103,31 @@ header {
     cursor: pointer;
 }
 
+.endofgame {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding-top: 1rem;
+    text-align: center;
+    background-color: yellow;
+    color: #141239;
+    border: #141239 solid 8px;
+    border-radius: 10px;
+    width: 100%;
+    padding: .75rem;
+}
+
+.endofgame > button {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    background-color: #141239;
+    color: yellow;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 
 
 
