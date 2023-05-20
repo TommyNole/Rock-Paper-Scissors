@@ -1,5 +1,5 @@
-greetUser();
-playGame();
+// greetUser();
+// playGame();
 //This function prompts for the player choice and adds that choice to a variable
 function getPlayerChoice() {
     let isNotValid = true;
@@ -27,8 +27,7 @@ function getPlayerChoice() {
 
 function getComputerChoice() {
         let compOptions = ["rock", "paper", "scissors"];
-        let compChoice = compOptions[Math.floor(Math.random() * compOptions.length)];
-        return compChoice;
+    return compOptions[Math.floor(Math.random() * compOptions.length)];
 }
 
 function playGame() {
