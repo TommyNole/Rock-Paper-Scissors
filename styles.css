@@ -77,6 +77,21 @@ header {
     padding: 1rem;
     margin-top: 1rem;
     text-align: center;
+    background-color: yellow;
+    border: #141239 solid 8px;
+    border-radius: 10px;
+}
+
+.rock-button > p, .paper-button > p, .scissors-button > p {
+    text-align: center;
+    justify-content: center;
+    font-weight: bolder;
+    background-color: #141239;
+    color: yellow;
+    height: 30px;
+    width: 100px;
+    padding-top: 2px;
+    border-radius: 5px;
 }
 
 
