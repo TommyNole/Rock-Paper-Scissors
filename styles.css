@@ -70,6 +70,11 @@ header {
     padding-top: 1rem;
 }
 
+.status {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+}
+
 .controls {
     display: flex;
     justify-content: space-between;
@@ -92,6 +97,10 @@ header {
     width: 100px;
     padding-top: 2px;
     border-radius: 5px;
+}
+
+.rock-button, .paper-button, .scissors-button {
+    cursor: pointer;
 }
 
 

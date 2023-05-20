@@ -1,79 +1,69 @@
-// greetUser();
-// playGame();
-//This function prompts for the player choice and adds that choice to a variable
-function getPlayerChoice() {
-    let isNotValid = true;
-    let userChoice = null;
+playRound();
+
+
     
-    do {
-        let userSelection = prompt("Enter your selection: 1 - Rock | 2 - Paper | 3 - Scissors");
-    
-            if (userSelection === null || userSelection === '') {
-                alert("Invalid response. Please try again");
-            } else if (userSelection === "1" || userSelection.toLowerCase() === "rock") {
-                isNotValid = false;
-                return userChoice = "rock";
-            } else if (userSelection === "2" || userSelection.toLowerCase() === "paper") {
-                isNotValid = false;
-                return userChoice = "paper";
-            } else if (userSelection === "3" || userSelection.toLowerCase() === "scissors") {
-                isNotValid = false;
-                return userChoice = "scissors";
-            } else {
-                alert("Not a valid choice. Please try again.");
-            }
-        } while (isNotValid);
-}
-
-function getComputerChoice() {
-        let compOptions = ["rock", "paper", "scissors"];
-    return compOptions[Math.floor(Math.random() * compOptions.length)];
-}
-
-function playGame() {
-    let playerWins = 0;
-    let computerWins = 0;
-
-    while (playerWins < 5 && computerWins < 5) {
-        playRound();
-        
+function playRound() {
+    const playerScore = document.querySelector('#player-score');
+    const computerScore = document.querySelector('#computer-score');
+    const statusText = document.querySelector('#status-text');
+    const choiceBtns = document.querySelectorAll('.user-choices');
+    let playerChoice;
+    let cpuChoice;
+             
+    choiceBtns.forEach(choiceBtn => choiceBtn.addEventListener('click', () => {
+        playerChoice = choiceBtn.id;
+        cpuChoice = computerChoice();
+        let result = checkResult(playerChoice, cpuChoice);
+    }));
+            
+    function computerChoice() {
+        let choices = ['rock', 'paper', 'scissors'];
+        return choices[Math.floor(Math.random() * choices.length)];
     }
     
-    if (playerWins > computerWins) {
-        alert(`You Won the Game! The score was: You: ${playerWins} | Computer: ${computerWins}`);
-    } else if (playerWins < computerWins) {
-        alert(`You Lost the Game! The score was: You: ${playerWins} | Computer:${computerWins}`);
-    } else {
-        alert(`You Tied the Game! The score was: You: ${playerWins} | Computer:${computerWins}`);
-    }
-    
-    function playRound() {
-        let playerSelection = getPlayerChoice();
-        let computerSelection = getComputerChoice();
-        
-    
-        if (playerSelection === 'rock' && computerSelection === 'scissors') {
-            alert("You Win!");
+    function checkResult(playerChoice, cpuChoice) { 
+        if (playerChoice === 'rock' && cpuChoice === 'scissors') {
+            statusText.textContent = 'You win! Rock beats scissors.';
+            playerScore.textContent++;
             playerWins++;
-        } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-            alert("You Win!");
+        } else if (playerChoice === 'scissors' && cpuChoice === 'paper') {
+            statusText.textContent = 'You win! Scissors beats paper.';
+            playerScore.textContent++;
             playerWins++;
-        } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-            alert('You Win!');
+        } else if (playerChoice === 'paper' && cpuChoice === 'rock') {
+            statusText.textContent = 'You win! Paper beats rock.';
+            playerScore.textContent++;
             playerWins++;
-        } else if (playerSelection === computerSelection) {
-            alert('Its a Tie!');
+        } else if (playerChoice === cpuChoice) {
+            statusText.textContent = 'It\'s a tie!';
         } else {
-            alert('You Lose!');
+            statusText.textContent = 'You lose! ' + cpuChoice + ' beats ' + playerChoice + '.';
+            computerScore.textContent++;
             computerWins++;
         }
-
-        console.log(`You: ${playerSelection}`, " | ", `Computer: ${computerSelection}`);
-        console.log(`The score is: You: ${playerWins} | Computer: ${computerWins}`);
     }
 }
 
-function greetUser() {
-
-    alert("Hi. Welcome to Rock Paper Scissors. The first one to 5 wins the game. Click OK when you're ready to begin");
-}
+            
+            // function checkResult(playerChoice, cpuChoice) {
+            //     if (playerChoice === cpuChoice) { 
+            //         statusText.textContent = 'It\'s a tie!';
+            //     } else if (playerChoice === 'rock' && cpuChoice === 'scissors') { 
+            //         statusText.textContent = 'You win! Rock beats scissors.';
+            //         playerScore.textContent++;
+            //     } else if (playerChoice === 'rock' && cpuChoice === 'paper') { 
+            //         statusText.textContent = 'You lose! Paper beats rock.';
+            //         computerScore.textContent++;
+            //     } else if (playerChoice === 'paper' && cpuChoice === 'rock') { 
+            //         statusText.textContent = 'You win! Paper beats rock.';
+            //         playerScore.textContent++;
+            //     } else if (playerChoice === 'paper' && cpuChoice === 'scissors') { 
+            //         statusText.textContent = 'You lose! Scissors beats paper.';
+            //         computerScore.textContent++;
+            //     } else if (playerChoice === 'scissors' && cpuChoice === 'paper') { 
+            //         statusText.textContent = 'You win! Scissors beats paper.';
+            //         playerScore.textContent++;
+            //     } else if (playerChoice === 'scissors' && cpuChoice === 'rock') { 
+            //         statusText.textContent = 'You lose! Rock beats scissors.';
+            //         computerScore.textContent++;
+            //     }}
