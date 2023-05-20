@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Caveat', cursive;
+}
+
+body {
+    background-color: #141239;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    margin-top: 5rem;
+}
+
+.container {
+    background-color: white;
+    color: #141239;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid yellow;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+img {
+    max-width: 100px;
+    border: 8px solid #141239;
+    border-radius: 50%;
+}
+header {
+    padding: .75rem;
+    background-color: #141239;
+    color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.instructions {
+    margin-top: 1rem;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.3rem;
+    background-color: #141239;
+    color: yellow;
+    border-radius: 8px;
+}
+
+.player #player-score, .computer #computer-score {
+    font-size: 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+
+.status {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    background-color: yellow;
+    border: #141239 solid 8px;
+    border-radius: 10px;
+}
+
+.rock-button > p, .paper-button > p, .scissors-button > p {
+    text-align: center;
+    justify-content: center;
+    font-weight: bolder;
+    background-color: #141239;
+    color: yellow;
+    height: 30px;
+    width: 100px;
+    padding-top: 2px;
+    border-radius: 5px;
+}
+
+.rock-button, .paper-button, .scissors-button {
+    cursor: pointer;
+}
+
+.endofgame {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding-top: 1rem;
+    text-align: center;
+    background-color: yellow;
+    color: #141239;
+    border: #141239 solid 8px;
+    border-radius: 10px;
+    width: 100%;
+    padding: .75rem;
+    margin-top: 1rem;
+}
+
+.endofgame > button {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    background-color: #141239;
+    color: yellow;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
