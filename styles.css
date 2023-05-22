@@ -27,11 +27,6 @@ body {
     padding: 20px;
 }
 
-img {
-    max-width: 100px;
-    border: 8px solid #141239;
-    border-radius: 50%;
-}
 header {
     padding: .75rem;
     background-color: #141239;
@@ -87,6 +82,18 @@ header {
     border-radius: 10px;
 }
 
+img {
+    max-width: 100px;
+    border: 8px solid #141239;
+    border-radius: 50%;
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 .rock-button > p, .paper-button > p, .scissors-button > p {
     text-align: center;
     justify-content: center;
@@ -99,14 +106,9 @@ header {
     border-radius: 5px;
 }
 
-.rock-button, .paper-button, .scissors-button {
-    cursor: pointer;
-}
-
 .endofgame {
     font-size: 1.5rem;
     font-weight: bolder;
-    padding-top: 1rem;
     text-align: center;
     background-color: yellow;
     color: #141239;

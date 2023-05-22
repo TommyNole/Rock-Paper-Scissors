@@ -4,6 +4,7 @@ const statusText = document.querySelector('#status-text');
 const choiceBtns = document.querySelectorAll('.user-choices');
 const controlsPanel = document.querySelector('.controls');
 const endOfGamePanel = document.querySelector('.endofgame');
+const announceWinner = document.querySelector('#announce-winner');
 const playAgainBtn = document.querySelector('#play-again');
 let playerChoice;
 let cpuChoice;
@@ -26,21 +27,21 @@ function computerChoice() {
 
 function checkResult(playerChoice, cpuChoice) { 
     if (playerChoice === 'rock' && cpuChoice === 'scissors') {
-        statusText.textContent = 'You win! ROCK beats SCISSORS.';
+        statusText.textContent = 'You win! ROCK beats SCISSORS';
         playerScore.textContent++;
         playerWins++;
     } else if (playerChoice === 'scissors' && cpuChoice === 'paper') {
-        statusText.textContent = 'You win! SCISSORS beats PAPER.';
+        statusText.textContent = 'You win! SCISSORS beats PAPER';
         playerScore.textContent++;
         playerWins++;
     } else if (playerChoice === 'paper' && cpuChoice === 'rock') {
-        statusText.textContent = 'You win! PAPER beats ROCK.';
+        statusText.textContent = 'You win! PAPER beats ROCK';
         playerScore.textContent++;
         playerWins++;
     } else if (playerChoice === cpuChoice) {
-        statusText.textContent = 'It\'s a tie!';
+        statusText.textContent = 'It\'s a TIE!';
     } else {
-        statusText.textContent = 'You lose! ' + cpuChoice + ' beats ' + playerChoice + '.';
+        statusText.textContent = `You lose! ${cpuChoice.toUpperCase()} beats ${playerChoice.toUpperCase()}.`;
         computerScore.textContent++;
         computerWins++;
     }
@@ -48,11 +49,11 @@ function checkResult(playerChoice, cpuChoice) {
 
 function checkForWin() {
     if (playerWins === 5) {
-        statusText.textContent = 'You won the game!';
+        announceWinner.textContent = 'YOU WON THE GAME!';
         endOfGamePanel.style.display = 'block';
         controlsPanel.style.display = 'none';
     } else if (computerWins === 5) { 
-        statusText.textContent = 'You lost the game!';
+        announceWinner.textContent = 'YOU LOST THE GAME!';
         endOfGamePanel.style.display = 'block';
         controlsPanel.style.display = 'none';
     }
