@@ -1,3 +1,4 @@
+/*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Press+Start+2P&display=swap');
 
 * {
@@ -11,7 +12,6 @@ body {
     background-color: #141239;
     display: flex;
     justify-content: center;
-    align-items: top;
     margin-top: 5rem;
 }
 
