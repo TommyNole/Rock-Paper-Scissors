@@ -26,15 +26,15 @@ function computerChoice() {
 
 function checkResult(playerChoice, cpuChoice) { 
     if (playerChoice === 'rock' && cpuChoice === 'scissors') {
-        statusText.textContent = 'You win! Rock beats scissors.';
+        statusText.textContent = 'You win! ROCK beats SCISSORS.';
         playerScore.textContent++;
         playerWins++;
     } else if (playerChoice === 'scissors' && cpuChoice === 'paper') {
-        statusText.textContent = 'You win! Scissors beats paper.';
+        statusText.textContent = 'You win! SCISSORS beats PAPER.';
         playerScore.textContent++;
         playerWins++;
     } else if (playerChoice === 'paper' && cpuChoice === 'rock') {
-        statusText.textContent = 'You win! Paper beats rock.';
+        statusText.textContent = 'You win! PAPER beats ROCK.';
         playerScore.textContent++;
         playerWins++;
     } else if (playerChoice === cpuChoice) {
